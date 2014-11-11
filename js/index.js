@@ -57,8 +57,9 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            document.getElementById("info").innerHTML = "<iframe width=\"80%\" height=\"500px\" src=\""+result.text+"\"></iframe>";
+            document.getElementById("info").innerHTML = "<iframe width=\"100%\" height=\"500px\" src=\""+result.text+"\"></iframe>";
             console.log(result);
+            document.getElementById("blank").innerHTML = "&nbsp;";
             /*
             if (args.format == "QR_CODE") {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
@@ -66,7 +67,7 @@ var app = {
             */
 
         }, function (error) { 
-            console.log("Scanning failed: ", error); 
+            console.log("Tarama hatası.: ", error); 
         } );
     },
 
