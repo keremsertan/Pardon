@@ -65,7 +65,9 @@ var app = {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
             }
             */
-
+            if(!(document.getElementById("info").indexOf("t24.com.tr") > -1)){
+            document.getElementById("info").innerHTML ="Lütfen doğru kodu okuttuğunuza emin olunuz."
+            }
         }, function (error) { 
             console.log("Tarama hatası.: ", error); 
         } );
