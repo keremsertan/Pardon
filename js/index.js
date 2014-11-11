@@ -57,8 +57,7 @@ var app = {
 
         scanner.scan( function (result) { 
 
-            
-            document.getElementById("info").innerHTML = result.text;
+            document.getElementById("info").innerHTML = "<iframe width=\"80%\" height=\"500px\" src=\""+result.text+"\"></iframe>";
             console.log(result);
             /*
             if (args.format == "QR_CODE") {
