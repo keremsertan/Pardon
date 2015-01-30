@@ -56,8 +56,9 @@ var app = {
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
         scanner.scan( function (result) { 
-
-            document.getElementById("info").innerHTML = "<iframe width=\"100%\" height=\"500px\" src=\""+result.text+"\"></iframe>";
+            if(result.text=="asdasdasd"){
+                document.getElementById("info").innerHTML = "çalışıyor";   
+            }
             console.log(result);
             document.getElementById("blank").innerHTML = "&nbsp;";
             /*
