@@ -57,10 +57,10 @@ var app = {
 
         scanner.scan( function (result) { 
             if(result.text=="asdasdasd"){
-                document.getElementById("main").innerHTML = "<h1>Philips h101 model Televizyon</h1><img src=\"img/televizyon.png\"><br><br>Özet özet özet.Özet özet özet";   
+                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Philips h101 model Televizyon</h1><img src=\"img/televizyon.png\"><br><br>Özet özet özet.Özet özet özet";   
             } 
             if(result.text=="aaaaaaaaa"){
-                document.getElementById("main").innerHTML = "<h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Marka özeti yorumlar içerik vs Özet özet özet.Özet özet özet";   
+                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Marka özeti yorumlar içerik vs Özet özet özet.Özet özet özet";   
             }
             console.log(result);
             document.getElementById("blank").innerHTML = "&nbsp;";
