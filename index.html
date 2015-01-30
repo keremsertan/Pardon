@@ -22,24 +22,82 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Pardon - Customer Review Service</title>
+        
         <link href="css/bootstrap.min.css" rel="stylesheet">
+        <script type="text/javascript" src="js/jquery2.min.js"></script>
+        <script type="text/javascript" src="js/parse-1.3.2.min.js"></script>
+        <link href="css/glyphicons.css" rel="stylesheet">
+        <link href="css/glyphicons-bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <center>
+        <div id="main">
             <div class="app">
                 <p id="blank">&nbsp;<br>&nbsp;<br>&nbsp;</p>
-                <div id="deviceready" class="blink">
                     <a href="index.html"><img width="120px" src="img/logo.png"></a>
                     <br><br>
+                <div id="deviceready" class="blink">
                     <p class="event listening">HAZIRLANIYOR...</p>
                     <p class="event received">UYGULAMA HAZIR</p>
                 </div>
                 <p><br><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</a><br><br><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> ÜRÜN KODUNU GİRİN</a></p>
                 <p id="info"></p>
+            </div>
         </div>
         </center>
+        <script>
+            var signupEmail="";
+            var signupPassword="";
+            var signupPhone="";
+            var loginEmail="";
+            var loginPassword="";
+            var restoranlar="";
+            Parse.initialize("ukXCJXXJ7nlY3OCQwPtTpuE4VaPrDx78kqUZSBvu", "Rouz8uDO2Tciz6RXl3raMqLYr7tOvA39c5mmQw5P");
+            var currentUser = Parse.User.current();
+            function checkUser(){
+                if (currentUser) {
+                    // do stuff with the user
+                    document.getElementById("main").innerHTML = "Giriş yapılmış durumda";
+                } else {
+                // show the signup or login page
+                    document.getElementById("main").innerHTML = "<div id=\"mainz\"> <br> <a href=\"index.html\"><img style=\"width:120px\" src=\"img/logo.png\"></a> <br> <br> <div role=\"tabpanel\" style=\"width:300px;\"> <ul class=\"nav nav-tabs\" role=\"tablist\"> <li role=\"presentation\" class=\"active\"><a href=\"#login\" aria-controls=\"login\" role=\"tab\" data-toggle=\"tab\">Giriş Yap</a></li> <li role=\"presentation\"><a href=\"#signup\" aria-controls=\"signup\" role=\"tab\" data-toggle=\"tab\">Üye Ol</a></li> </ul> <div class=\"tab-content\"> <div role=\"tabpanel\" class=\"tab-pane active\" id=\"login\"> <br> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" id=\"loginemail\" placeholder=\"Email adresiniz\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"password\" class=\"form-control\" id=\"loginpass\" placeholder=\"Şifreniz\"> </div> <button type=\"button\" class=\"btn btn-danger\" aria-label=\"Left Align\" onclick=\"loginUser()\">&nbsp; Giriş Yap&nbsp;</button> </div> <div role=\"tabpanel\" class=\"tab-pane\" id=\"signup\"> <br> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Email adresiniz\" id=\"signupemail\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"password\" class=\"form-control\" id=\"signuppass\" placeholder=\"Şifreniz\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" id=\"signupphone\" placeholder=\"Telefonunuz\"> </div> <button type=\"button\" class=\"btn btn-danger\" aria-label=\"Left Align\" onclick=\"createUser()\">&nbsp; Üye Ol &nbsp;</button> </div> </div>";
+                }
+            }
+            function createUser(){
+                var user = new Parse.User();
+                signupEmail=document.getElementById("signupemail").value;
+                signupPassword=document.getElementById("signuppass").value;
+                signupPhone=document.getElementById("signupphone").value;
+                user.set("username", signupEmail);
+                user.set("password", signupPassword);
+                user.set("email", signupEmail);
+                user.set("phone", signupPhone);
+ 
+                user.signUp(null, {
+                    success: function(user) {
+                    // Hooray! Let them use the app now.
+                    },
+                    error: function(user, error) {
+                    // Show the error message somewhere and let the user try again.
+                    alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+            }
+            function loginUser(){
+                loginEmail=document.getElementById("loginemail").value;
+                loginPassword=document.getElementById("loginpass").value;
+                Parse.User.logIn(loginEmail, loginPassword, {
+                    success: function(user) {
+                        // Do stuff after successful login.
+                        alert("tamamdır");
+                    },
+                    error: function(user, error) {
+                        // The login failed. Check error to see why.
+                        alert("olmadı");
+                    }
+                });
+            }
+        </script>
         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="barcodescanner.js"></script><script type="text/javascript" src="js/index.js"></script><script type="text/javascript">app.initialize();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
     </body>
 </html>
