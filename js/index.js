@@ -56,11 +56,14 @@ var app = {
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
         scanner.scan( function (result) { 
-            if(result.text=="asdasdasd"){
-                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Philips h101 model Televizyon</h1><img src=\"img/televizyon.png\"><br><br>Özet özet özet.Özet özet özet";   
+            if(result.text=="12312"){
+                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Philips h101 model Televizyon</h1><img src=\"img/televizyon.png\"><br><br>Özet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özet <br><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorumları Okuyun&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorum Yapın&nbsp;</button>";   
             } 
-            if(result.text=="aaaaaaaaa"){
-                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Marka özeti yorumlar içerik vs Özet özet özet.Özet özet özet";   
+            if(result.text=="11235"){
+                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Özet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özet <br><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorumları Okuyun&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorum Yapın&nbsp;</button>";   
+            } 
+            if(result.text=="13521"){
+                document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Nusret Steakhouse</h1><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Menüye Bakın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Garson Çağırın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Hesap İsteyin&nbsp;</button>";   
             }
             console.log(result);
             document.getElementById("blank").innerHTML = "&nbsp;";

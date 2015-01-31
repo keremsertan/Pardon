@@ -1,22 +1,4 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -31,18 +13,22 @@
         <link href="css/index.css" rel="stylesheet">
     </head>
     <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <center><h1 id="navbarlogin">pardon <button style="margin-left:20px;" id="loginbutton" type="button" class="btn btn-default navbar-btn">Çıkış Yap</button></h1></center>
+                </div>
+            </div>
+        </nav>
         <center>
         <div id="main">
             <div class="app">
-                <p id="blank">&nbsp;<br>&nbsp;<br>&nbsp;</p>
-                    <a href="index.html"><img width="100px" src="img/logo.png"></a>
                     <br><br>
                 <div id="deviceready" class="blink">
                     <p class="event listening">HAZIRLANIYOR...</p>
                     <p class="event received">KAMERA HAZIR</p>
                 </div>
-                <p><br><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</a><br><br><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> ÜRÜN KODUNU GİRİN</a></p>
-                <p id="info"></p>
+                <p><br><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</a><h2 style="color:#000;">veya</h2><a href="#" class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> KODU GİRİN</a></p>
             </div>
         </div>
         </center>
@@ -50,33 +36,38 @@
             var signupEmail="";
             var signupPassword="";
             var signupPhone="";
-            var loginEmail="";
+            var signupUsername="";
+            var loginUsername="";
             var loginPassword="";
             var restoranlar="";
             Parse.initialize("ukXCJXXJ7nlY3OCQwPtTpuE4VaPrDx78kqUZSBvu", "Rouz8uDO2Tciz6RXl3raMqLYr7tOvA39c5mmQw5P");
             var currentUser = Parse.User.current();
+            checkUser();
             function checkUser(){
                 if (currentUser) {
                     // do stuff with the user
-                    document.getElementById("main").innerHTML = "Giriş yapılmış durumda";
                 } else {
                 // show the signup or login page
-                    document.getElementById("main").innerHTML = "<div id=\"mainz\"> <br> <a href=\"index.html\"><img style=\"width:120px\" src=\"img/logo.png\"></a> <br> <br> <div role=\"tabpanel\" style=\"width:300px;\"> <ul class=\"nav nav-tabs\" role=\"tablist\"> <li role=\"presentation\" class=\"active\"><a href=\"#login\" aria-controls=\"login\" role=\"tab\" data-toggle=\"tab\">Giriş Yap</a></li> <li role=\"presentation\"><a href=\"#signup\" aria-controls=\"signup\" role=\"tab\" data-toggle=\"tab\">Üye Ol</a></li> </ul> <div class=\"tab-content\"> <div role=\"tabpanel\" class=\"tab-pane active\" id=\"login\"> <br> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" id=\"loginemail\" placeholder=\"Email adresiniz\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"password\" class=\"form-control\" id=\"loginpass\" placeholder=\"Şifreniz\"> </div> <button type=\"button\" class=\"btn btn-danger\" aria-label=\"Left Align\" onclick=\"loginUser()\">&nbsp; Giriş Yap&nbsp;</button> </div> <div role=\"tabpanel\" class=\"tab-pane\" id=\"signup\"> <br> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Email adresiniz\" id=\"signupemail\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"password\" class=\"form-control\" id=\"signuppass\" placeholder=\"Şifreniz\"> </div> <div class=\"form-group\" style=\"width:300px;\"> <input type=\"text\" class=\"form-control\" id=\"signupphone\" placeholder=\"Telefonunuz\"> </div> <button type=\"button\" class=\"btn btn-danger\" aria-label=\"Left Align\" onclick=\"createUser()\">&nbsp; Üye Ol &nbsp;</button> </div> </div>";
+                    document.getElementById("navbarlogin").innerHTML = "pardon";
+                    document.getElementById("main").innerHTML = "<div id=\"mainz\"> <br> <br> <div role=\"tabpanel\" style=\"width:250px;\"> <ul class=\"nav nav-tabs\" role=\"tablist\"> <li role=\"presentation\" class=\"active\"><a href=\"#login\" aria-controls=\"login\" role=\"tab\" data-toggle=\"tab\">Giriş Yap</a></li> <li role=\"presentation\"><a href=\"#signup\" aria-controls=\"signup\" role=\"tab\" data-toggle=\"tab\">Üye Ol</a></li> </ul> <div class=\"tab-content\"> <div role=\"tabpanel\" class=\"tab-pane active\" id=\"login\"> <br> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" id=\"loginusername\" placeholder=\"Kullanıcı adı\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"password\" class=\"form-control\" id=\"loginpass\" placeholder=\"Şifre\"> </div> <button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\" onclick=\"loginUser()\">&nbsp; Giriş Yap&nbsp;</button><br><br><div id=\"resultsignup\"></div> </div> <div role=\"tabpanel\" class=\"tab-pane\" id=\"signup\"> <br> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Kullanıcı adı\" id=\"signupusername\"> </div><div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Email adresi\" id=\"signupemail\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"password\" class=\"form-control\" id=\"signuppass\" placeholder=\"Şifre\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" id=\"signupphone\" placeholder=\"Telefon\"> </div> <button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\" onclick=\"createUser()\">&nbsp; Üye Ol &nbsp;</button> </div> </div>";
                 }
             }
             function createUser(){
                 var user = new Parse.User();
+                signupUsername=document.getElementById("signupusername").value
                 signupEmail=document.getElementById("signupemail").value;
                 signupPassword=document.getElementById("signuppass").value;
                 signupPhone=document.getElementById("signupphone").value;
-                user.set("username", signupEmail);
+                user.set("username", signupUsername);
                 user.set("password", signupPassword);
                 user.set("email", signupEmail);
                 user.set("phone", signupPhone);
  
                 user.signUp(null, {
                     success: function(user) {
+                    location.reload();
                     // Hooray! Let them use the app now.
+                    document.getElementById("resultsignup").innerHTML = "<div class=\"alert alert-success\" role=\"alert\">Üyelik işlemi başarılı. üyeliğinizin tamamlanabilmesi için onay mailindeki linke tıklayın.</div>";
                     },
                     error: function(user, error) {
                     // Show the error message somewhere and let the user try again.
@@ -85,16 +76,16 @@
                 });
             }
             function loginUser(){
-                loginEmail=document.getElementById("loginemail").value;
+                loginUsername=document.getElementById("loginusername").value;
                 loginPassword=document.getElementById("loginpass").value;
-                Parse.User.logIn(loginEmail, loginPassword, {
+                Parse.User.logIn(loginUsername, loginPassword, {
                     success: function(user) {
                         // Do stuff after successful login.
-                        alert("tamamdır");
+                        document.getElementById("main").innerHTML = "<div class=\"app\"> <br><br> <div id=\"deviceready\" class=\"blink\"> <p class=\"event listening\">HAZIRLANIYOR...</p> <p class=\"event received\">KAMERA HAZIR</p> </div> <p><br><a href=\"#\" class=\"btn btn-primary btn-lg\" id=\"scan\"><span class=\"glyphicon glyphicon-camera\"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</a><br><br><a href=\"#\" class=\"btn btn-primary btn-lg\" id=\"scan\"><span class=\"glyphicon glyphicon-align-justify\"></span> ÜRÜN KODUNU GİRİN</a></p> </div>";
                     },
                     error: function(user, error) {
                         // The login failed. Check error to see why.
-                        alert("olmadı");
+                        document.getElementById("resultsignup").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Giriş yapılamadı.Kullanıcı adı ve şifrenizi kontrol edin.</div>";
                     }
                 });
             }
