@@ -11,12 +11,14 @@
         <link href="css/glyphicons.css" rel="stylesheet">
         <link href="css/glyphicons-bootstrap.css" rel="stylesheet">
         <link href="css/index.css" rel="stylesheet">
+        <link href="css/glyphicons.css" rel="stylesheet">
+        <link href="css/glyphicons-bootstrap.css" rel="stylesheet">
     </head>
     <body>
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <center><h1 id="navbarlogin">pardon <button style="margin-left:20px;" id="loginbutton" type="button" class="btn btn-default navbar-btn">Çıkış Yap</button></h1></center>
+                    <center><h1 id="navbarlogin">pardon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicons glyphicons-log-out"></span></h1></center>
                 </div>
             </div>
         </nav>
@@ -28,10 +30,33 @@
                     <p class="event listening">HAZIRLANIYOR...</p>
                     <p class="event received">KAMERA HAZIR</p>
                 </div>
+                <br><br>
                 <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</button><h2 style="color:#000;">veya</h2><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> KODU GİRİN</button></p>
             </div>
         </div>
         </center>
+        <script language="javascript" type="text/javascript"> 
+            function disableselect(e) {             
+                return false 
+            } 
+            function reEnable() { 
+                return true 
+            }
+            document.onselectstart = new Function("return false") 
+            if (window.sidebar) { 
+                document.onmousedown = disableselect                    // for mozilla           
+                document.onclick = reEnable 
+            }
+            function clickIE() { 
+                if (document.all) { 
+                    (message); 
+                    return false; 
+                } 
+            }
+            document.oncontextmenu = new Function("return false") 
+            var element = document.getElementById('tbl'); 
+            element.onmousedown = function () { return false; }        // For Mozilla Browser
+        </script>
         <script>
             var signupEmail="";
             var signupPassword="";
