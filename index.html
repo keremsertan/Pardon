@@ -18,20 +18,19 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <center><h1 id="navbarlogin">pardon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="glyphicons glyphicons-log-out"></span></h1></center>
+                    <center><h1 id="navbarlogin">pardon &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span onclick="logOut()" class="glyphicons glyphicons-log-out"></span></h1></center>
                 </div>
             </div>
         </nav>
         <center>
         <div id="main">
             <div class="app">
-                    <br><br>
+                    <br>
                 <div id="deviceready" class="blink">
                     <p class="event listening">HAZIRLANIYOR...</p>
                     <p class="event received">KAMERA HAZIR</p>
                 </div>
-                <br><br>
-                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</button><h2 style="color:#000;">veya</h2><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> KODU GİRİN</button></p>
+                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</button><br><br><h2 style="color:#000;">veya</h2><br><input style="width:150px; height:40px;" type="text" class="form-control" placeholder="Pardon Kodu" aria-describedby="basic-addon1"><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> KODU GİRİN</button></p>
             </div>
         </div>
         </center>
@@ -74,7 +73,7 @@
                 } else {
                 // show the signup or login page
                     document.getElementById("navbarlogin").innerHTML = "pardon";
-                    document.getElementById("main").innerHTML = "<div id=\"mainz\"> <br> <br> <div role=\"tabpanel\" style=\"width:250px;\"> <ul class=\"nav nav-tabs\" role=\"tablist\"> <li role=\"presentation\" class=\"active\"><a href=\"#login\" aria-controls=\"login\" role=\"tab\" data-toggle=\"tab\">Giriş Yap</a></li> <li role=\"presentation\"><a href=\"#signup\" aria-controls=\"signup\" role=\"tab\" data-toggle=\"tab\">Üye Ol</a></li> </ul> <div class=\"tab-content\"> <div role=\"tabpanel\" class=\"tab-pane active\" id=\"login\"> <br> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" id=\"loginusername\" placeholder=\"Kullanıcı adı\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"password\" class=\"form-control\" id=\"loginpass\" placeholder=\"Şifre\"> </div> <button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\" onclick=\"loginUser()\">&nbsp; Giriş Yap&nbsp;</button><br><br><div id=\"resultsignup\"></div> </div> <div role=\"tabpanel\" class=\"tab-pane\" id=\"signup\"> <br> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Kullanıcı adı\" id=\"signupusername\"> </div><div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" placeholder=\"Email adresi\" id=\"signupemail\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"password\" class=\"form-control\" id=\"signuppass\" placeholder=\"Şifre\"> </div> <div class=\"form-group\" style=\"width:250px;\"> <input type=\"text\" class=\"form-control\" id=\"signupphone\" placeholder=\"Telefon\"> </div> <button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\" onclick=\"createUser()\">&nbsp; Üye Ol &nbsp;</button> </div> </div>";
+                    document.getElementById("main").innerHTML = "<h3><div id=\"mainz\"> <br> <br> <div role=\"tabpanel\" style=\"width:250px;\"> <ul class=\"nav nav-tabs\" role=\"tablist\"> <li role=\"presentation\" class=\"active\"><a href=\"#login\" aria-controls=\"login\" role=\"tab\" data-toggle=\"tab\">Giriş Yap</a></li> <li role=\"presentation\"><a href=\"#signup\" aria-controls=\"signup\" role=\"tab\" data-toggle=\"tab\">Üye Ol</a></li> </ul> <div class=\"tab-content\"> <div role=\"tabpanel\" class=\"tab-pane active\" id=\"login\"> <br> <div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"text\" class=\"form-control\" id=\"loginusername\" placeholder=\"Kullanıcı adı\"> </div> <div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"password\" class=\"form-control\" style=\"width:250px; height:40px\" id=\"loginpass\" placeholder=\"Şifre\"> </div> <button type=\"button\" class=\"btn btn-primary btn-lg\" aria-label=\"Left Align\" onclick=\"loginUser()\">&nbsp; Giriş Yap&nbsp;</button><br><br><div id=\"resultsignup\"></div> </div> <div role=\"tabpanel\" class=\"tab-pane\" id=\"signup\"> <br> <div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"text\" class=\"form-control\" placeholder=\"Kullanıcı adı\" id=\"signupusername\"> </div><div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"text\" class=\"form-control\" placeholder=\"Email adresi\" id=\"signupemail\"> </div> <div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"password\" class=\"form-control\" id=\"signuppass\" placeholder=\"Şifre\"> </div> <div class=\"form-group\" style=\"width:250px; height:40px\"> <input style=\"width:250px; height:40px\" type=\"text\" class=\"form-control\" id=\"signupphone\" placeholder=\"Telefon\"> </div> <button type=\"button\" class=\"btn btn-primary btn-lg\" aria-label=\"Left Align\" onclick=\"createUser()\">&nbsp; Üye Ol &nbsp;</button> </div> </div></h3>";
                 }
             }
             function createUser(){
@@ -106,13 +105,18 @@
                 Parse.User.logIn(loginUsername, loginPassword, {
                     success: function(user) {
                         // Do stuff after successful login.
-                        document.getElementById("main").innerHTML = "<div class=\"app\"> <br><br> <div id=\"deviceready\" class=\"blink\"> <p class=\"event listening\">HAZIRLANIYOR...</p> <p class=\"event received\">KAMERA HAZIR</p> </div> <p><br><a href=\"#\" class=\"btn btn-primary btn-lg\" id=\"scan\"><span class=\"glyphicon glyphicon-camera\"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</a><br><br><a href=\"#\" class=\"btn btn-primary btn-lg\" id=\"scan\"><span class=\"glyphicon glyphicon-align-justify\"></span> ÜRÜN KODUNU GİRİN</a></p> </div>";
+                        location.reload();
                     },
                     error: function(user, error) {
                         // The login failed. Check error to see why.
                         document.getElementById("resultsignup").innerHTML = "<div class=\"alert alert-danger\" role=\"alert\">Giriş yapılamadı.Kullanıcı adı ve şifrenizi kontrol edin.</div>";
                     }
                 });
+            }
+            function logOut(){
+                Parse.User.logOut();
+                currentUser = Parse.User.current();
+                location.reload();
             }
         </script>
         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="barcodescanner.js"></script><script type="text/javascript" src="js/index.js"></script><script type="text/javascript">app.initialize();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
