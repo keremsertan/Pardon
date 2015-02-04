@@ -129,7 +129,7 @@
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results.length; i++) { 
                             var object = results[i];
-                            menu1=menu1+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-body\"><h4 align=\"left\">"+object.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-footer\">"+object.get("summaryTurkish")+"</div></div>";
+                            menu1=menu1+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h4 align=\"left\">"+object.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                         }
                         document.getElementById("main").innerHTML = menu1;
                     },
