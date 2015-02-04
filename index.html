@@ -125,11 +125,11 @@
                 query.equalTo("menugroup", 1);
                 query.find({
                     success: function(results) {
-                        menu="<h3>Türk Çayı</h3>";
+                        menu1="<h3>Türk Çayı</h3>";
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results.length; i++) { 
                             var object = results[i];
-                            menu1=menu1+"<div class=\"panel panel-default\"><div class=\"panel-body\">"+object.get("title")+"</div><div class=\"panel-footer\">"+object.get("summaryTurkish")+"</div></div>";
+                            menu1=menu1+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-body\"><h4 align=\"left\">"+object.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-footer\">"+object.get("summaryTurkish")+"</div></div>";
                         }
                         document.getElementById("main").innerHTML = menu1;
                     },
