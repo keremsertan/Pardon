@@ -118,6 +118,27 @@
                 currentUser = Parse.User.current();
                 location.reload();
             }
+            function dem(){
+                var menu1="";
+                var Dem = Parse.Object.extend("demmenu");
+                var query = new Parse.Query(Dem);
+                query.equalTo("menugroup", 1);
+                query.find({
+                    success: function(results) {
+                        menu="<h3>Türk Çayı</h3>";
+                        // Do something with the returned Parse.Object values
+                        for (var i = 0; i < results.length; i++) { 
+                            var object = results[i];
+                            menu1=menu1+"<div class=\"panel panel-default\"><div class=\"panel-body\">"+object.get("title")+"</div><div class=\"panel-footer\">"+object.get("summaryTurkish")+"</div></div>";
+                        }
+                        document.getElementById("main").innerHTML = menu1;
+                    },
+                    error: function(error) {
+                        alert("Error: " + error.code + " " + error.message);
+                    }
+                });
+
+            }
         </script>
         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="barcodescanner.js"></script><script type="text/javascript" src="js/index.js"></script><script type="text/javascript">app.initialize();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
     </body>

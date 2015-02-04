@@ -65,6 +65,9 @@ var app = {
             if(result.text=="13521"){
                 document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Nusret Steakhouse</h1><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Menüye Bakın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Garson Çağırın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Hesap İsteyin&nbsp;</button>";   
             }
+            if(result.text=="11293"){
+                dem();   
+            }
             console.log(result);
             document.getElementById("blank").innerHTML = "&nbsp;";
             /*
