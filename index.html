@@ -132,7 +132,6 @@
                             var object1 = results1[i];
                             menu1=menu1+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h4 align=\"left\">"+object1.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-body\">"+object1.get("summaryTurkish")+"</div></div>";
                         }
-                        document.getElementById("main").innerHTML = menu1;
                     },
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
@@ -142,13 +141,12 @@
                 query2.equalTo("menugroup", 2);
                 query2.find({
                     success: function(results2) {
-                        menu2="<h3 style=\"color:#333;\">Türk Çayı</h3>";
+                        menu2="<h3 style=\"color:#333;\">Yeşil Çay</h3>";
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results2.length; i++) { 
                             var object2 = results2[i];
                             menu2=menu2+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h4 align=\"left\">"+object2.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-body\">"+object2.get("summaryTurkish")+"</div></div>";
                         }
-                        document.getElementById("main").innerHTML = menu2;
                     },
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
@@ -159,18 +157,18 @@
                 query3.equalTo("menugroup", 3);
                 query3.find({
                     success: function(results3) {
-                        menu3="<h3 style=\"color:#333;\">Türk Çayı</h3>";
+                        menu3="<h3 style=\"color:#333;\">Mavi Çay</h3>";
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results3.length; i++) { 
                             var object2 = results3[i];
                             menu3=menu3+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h4 align=\"left\">"+object3.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-body\">"+object3.get("summaryTurkish")+"</div></div>";
                         }
-                        document.getElementById("main").innerHTML = menu3;
                     },
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
                     }
                 });
+                document.getElementById("main").innerHTML = menu1+menu2+menu3;
             }
         </script>
         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="barcodescanner.js"></script><script type="text/javascript" src="js/index.js"></script><script type="text/javascript">app.initialize();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
