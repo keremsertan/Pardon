@@ -64,6 +64,15 @@
             var loginUsername="";
             var loginPassword="";
             var restoranlar="";
+            var menu1="";
+            var menu2="";
+            var menu3="";
+            var menu4="";
+            var menu5="";
+            var menu6="";
+            var menu7="";
+            var menu8="";
+            var menu9="";
             Parse.initialize("ukXCJXXJ7nlY3OCQwPtTpuE4VaPrDx78kqUZSBvu", "Rouz8uDO2Tciz6RXl3raMqLYr7tOvA39c5mmQw5P");
             var currentUser = Parse.User.current();
             function checkUser(){
@@ -118,15 +127,6 @@
                 location.reload();
             }
             function dem(){
-                var menu1="";
-                var menu2="";
-                var menu3="";
-                var menu4="";
-                var menu5="";
-                var menu6="";
-                var menu7="";
-                var menu8="";
-                var menu9="";
                 var Dem = Parse.Object.extend("demmenu");
                 var query = new Parse.Query(Dem);
                 query.find({
@@ -163,7 +163,7 @@
                                 menu9=menu9+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }
                         }
-                        document.getElementById("main").innerHTML = "<img width=\"120\" src=\"img/demlogo.png\"><br>Dem, İstanbul çay evi. Beyaz, yeşil, oolong, siyah, tütsülenmiş, pu-erh, kırmızı çay ve bitki çayından oluşan 60 çaylık yelpazesi ve 3 farklı ev yapımı buzlu çayıyla bu mucize bitkinin her halinin, ait oldukları kültürü yansıtan özel sunumlar ile İstanbullular ile buluştuğu Dem’de, çaylara eşlik eden özgün tatlılar, atıştırmalıklar ve zengin kahvaltı seçenekleri de mevcut.<br><br><table><tbody><tr><td><img width=\"120\" style=\"margin:5px;\" onclick=\"cay()\" src=\"img/demcay.png\"></td><td><img style=\"margin:5px;\" width=\"120\" src=\"img/demyiyecek.png\"></td></tr></tbody></table>";
+                        document.getElementById("main").innerHTML = "<img width=\"120\" src=\"img/demlogo.png\"><br>Dem, İstanbul çay evi. Beyaz, yeşil, oolong, siyah, tütsülenmiş, pu-erh, kırmızı çay ve bitki çayından oluşan 60 çaylık yelpazesi ve 3 farklı ev yapımı buzlu çayıyla bu mucize bitkinin her halinin, ait oldukları kültürü yansıtan özel sunumlar ile İstanbullular ile buluştuğu Dem’de, çaylara eşlik eden özgün tatlılar, atıştırmalıklar ve zengin kahvaltı seçenekleri de mevcut.<br><br><table><tbody><tr><td><a onclick=\"cay()\"><img width=\"120\" style=\"margin:5px;\" onclick=\"cay()\" src=\"img/demcay.png\"></a></td><td><img style=\"margin:5px;\" width=\"120\" src=\"img/demyiyecek.png\"></td></tr></tbody></table>";
                     },
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
