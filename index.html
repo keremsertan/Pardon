@@ -132,15 +132,15 @@
                 var query = new Parse.Query(Dem);
                 query.find({
                     success: function(results) {
-                        menu1="<h3 style=\"color:#333\">ÇAY</h3><div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu1\" aria-expanded=\"false\" aria-controls=\"menu1\">TÜRK ÇAYI</a></h4></div><div id=\"menu1\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu2="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu2\" aria-expanded=\"false\" aria-controls=\"menu2\">BEYAZ ÇAY</a></h4></div><div id=\"menu2\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu3="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu3\" aria-expanded=\"false\" aria-controls=\"menu3\">YEŞİL ÇAY</a></h4></div><div id=\"menu3\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu4="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu4\" aria-expanded=\"false\" aria-controls=\"menu4\">OOLONG</a></h4></div><div id=\"menu4\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu5="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu5\" aria-expanded=\"false\" aria-controls=\"menu5\">SİYAH ÇAY</a></h4></div><div id=\"menu5\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu6="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu6\" aria-expanded=\"false\" aria-controls=\"menu6\">TÜTSÜLENMİŞ ÇAY</a></h4></div><div id=\"menu6\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu7="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu7\" aria-expanded=\"false\" aria-controls=\"menu7\">PU-ERH ÇAYI</a></h4></div><div id=\"menu7\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu8="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu8\" aria-expanded=\"false\" aria-controls=\"menu8\">KIRMIZI ÇAY</a></h4></div><div id=\"menu8\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
-                        menu9="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu9\" aria-expanded=\"false\" aria-controls=\"menu9\">BİTKİ ÇAYLARI</a></h4></div><div id=\"menu9\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
+                        menu1="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div style=\"width:95%;\" class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#menu1\" aria-expanded=\"false\" aria-controls=\"menu1\">ÇAY</a></h4></div><div id=\"menu1\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\"><h4 style=\"color:#333\">TÜRK ÇAYI</h4>";
+                        menu2="<h4 style=\"color:#333\">BEYAZ ÇAY</h4>";
+                        menu3="<h4 style=\"color:#333\">YEŞİL ÇAY</h4>";
+                        menu4="<h4 style=\"color:#333\">OOLONG</h4>";
+                        menu5="<h4 style=\"color:#333\">SİYAH ÇAY</h4>";
+                        menu6="<h4 style=\"color:#333\">TÜTSÜLENMİŞ ÇAY</h4>";
+                        menu7="<h4 style=\"color:#333\">PU-ERH ÇAYI</h4>";
+                        menu8="<h4 style=\"color:#333\">KIRMIZI ÇAY</h4>";
+                        menu9="<h4 style=\"color:#333\">BİTKİ ÇAYLARI</h4>";
                         // Do something with the returned Parse.Object values
                         for (var i = 0; i < results.length; i++) { 
                             var object = results[i];
@@ -164,16 +164,7 @@
                                 menu9=menu9+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }
                         }
-                        menu1=menu1+"</div></div></div></div>";
-                        menu2=menu2+"</div></div></div></div>";
-                        menu3=menu3+"</div></div></div></div>";
-                        menu4=menu4+"</div></div></div></div>";
-                        menu5=menu5+"</div></div></div></div>";
-                        menu6=menu6+"</div></div></div></div>";
-                        menu7=menu7+"</div></div></div></div>";
-                        menu8=menu8+"</div></div></div></div>";
-                        menu9=menu9+"</div></div></div></div>";
-                        document.getElementById("main").innerHTML = menu1+menu2+menu3+menu4+menu5+menu6+menu7+menu8+menu9;
+                        document.getElementById("main").innerHTML = menu1+menu2+menu3+menu4+menu5+menu6+menu7+menu8+menu9+"</div></div></div></div>";
                     },
                     error: function(error) {
                         alert("Error: " + error.code + " " + error.message);
