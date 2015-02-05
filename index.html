@@ -125,7 +125,7 @@
                 var query = new Parse.Query(Dem);
                 query.find({
                     success: function(results) {
-                        menu1="<h3 style=\"color:#333;\">1Türk Çayı</h3>";
+                        menu1="<div class=\"panel-group\" id=\"accordion\" role=\"tablist\" aria-multiselectable=\"true\"><div class=\"panel panel-default\"><div class=\"panel-heading\" role=\"tab\" id=\"headingOne\"><h4 class=\"panel-title\"><a data-toggle=\"collapse\" data-parent=\"#accordion\" href=\"#collapseOne\" aria-expanded=\"false\" aria-controls=\"collapseOne\">Collapsible Group Item #1</a></h4></div><div id=\"collapseOne\" class=\"panel-collapse collapse in\" role=\"tabpanel\" aria-labelledby=\"headingOne\"><div class=\"panel-body\">";
                         menu2="<h3 style=\"color:#333;\">2Türk Çayı</h3>";
                         menu3="<h3 style=\"color:#333;\">3Türk Çayı</h3>";
                         menu4="<h3 style=\"color:#333;\">4Türk Çayı</h3>";
@@ -154,6 +154,7 @@
                                 menu8=menu8+"<div style=\"width:90%;\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h4 align=\"left\">"+object.get("title")+" &nbsp;&nbsp;Puan:4,5</h4></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }
                         }
+                        menu1=menu1+"</div></div></div></div>";
                         document.getElementById("main").innerHTML = menu1+menu2+menu3+menu4+menu5+menu6+menu7+menu8;
                     },
                     error: function(error) {
