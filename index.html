@@ -28,9 +28,14 @@
                     <br>
                 <div id="deviceready" class="blink">
                     <p class="event listening">HAZIRLANIYOR...</p>
-                    <p class="event received">KAMERA HAZIR</p>
+                    <!--<p class="event received">KAMERA HAZIR</p> belki ilerde kullanırım-->
                 </div>
-                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</button><br><br><h2 style="color:#000;">veya</h2><br><input style="width:150px; height:40px;" type="text" class="form-control" placeholder="Pardon Kodu" aria-describedby="basic-addon1"><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-align-justify"></span> KODU GİRİN</button></p>
+                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODU TARAYIN&nbsp;&nbsp;&nbsp;</button><br><br><h2 style="color:#000;">veya</h2><br><div class="col-lg-6"><div class="input-group"><input type="text" class="form-control" placeholder="PARDON KODU"><span class="input-group-btn">
+        <button class="btn btn-primary btn-lg" type="button">GİT</button>
+      </span>
+    </div>
+  </div>
+</div></p>
             </div>
         </div>
         </center>
@@ -144,23 +149,23 @@
                         for (var i = 0; i < results.length; i++) { 
                             var object = results[i];
                             if(object.get("menugroup")==1){
-                                menu1=menu1+"<div style=\"width:95%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu1=menu1+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==2){
-                                menu2=menu2+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu2=menu2+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==3){
-                                menu3=menu3+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu3=menu3+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==4){
-                                menu4=menu4+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu4=menu4+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==5){
-                                menu5=menu5+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu5=menu5+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==6){
-                                menu6=menu6+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu6=menu6+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==7){
-                                menu7=menu7+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu7=menu7+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else if(object.get("menugroup")==8){
-                                menu8=menu8+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu8=menu8+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }else{
-                                menu9=menu9+"<div class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
+                                menu9=menu9+"<div style=\"width:90%\" class=\"panel panel-primary\"><div class=\"panel-heading\"><h5 align=\"left\">"+object.get("title")+" </h5></div><div class=\"panel-body\">"+object.get("summaryTurkish")+"</div></div>";
                             }
                         }
                         document.getElementById("main").innerHTML = "<img width=\"120\" src=\"img/demlogo.png\"><br>Dem, İstanbul çay evi. Beyaz, yeşil, oolong, siyah, tütsülenmiş, pu-erh, kırmızı çay ve bitki çayından oluşan 60 çaylık yelpazesi ve 3 farklı ev yapımı buzlu çayıyla bu mucize bitkinin her halinin, ait oldukları kültürü yansıtan özel sunumlar ile İstanbullular ile buluştuğu Dem’de, çaylara eşlik eden özgün tatlılar, atıştırmalıklar ve zengin kahvaltı seçenekleri de mevcut.<br><br><table><tbody><tr><td><a onclick=\"cay()\"><img width=\"120\" style=\"margin:10px;\" onclick=\"cay()\" src=\"img/demcay.png\"></a></td><td><img style=\"margin:10px;\" width=\"120\" src=\"img/demyiyecek.png\"></td></tr></tbody></table>";
