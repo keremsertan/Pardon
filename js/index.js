@@ -69,7 +69,6 @@ var app = {
                 dem();   
             }
             console.log(result);
-            document.getElementById("blank").innerHTML = "&nbsp;";
             /*
             if (args.format == "QR_CODE") {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });

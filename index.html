@@ -18,7 +18,7 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <center><h1 id="navbarlogin">pardon</h1></center>
+                    <center><h1 id="navbarlogin">Pardon</h1></center>
                 </div>
             </div>
         </nav>
@@ -30,8 +30,8 @@
                     <p class="event listening">HAZIRLANIYOR...</p>
                     <!--<p class="event received">KAMERA HAZIR</p> belki ilerde kullanırım-->
                 </div>
-                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODUNU TARAYIN&nbsp;&nbsp;&nbsp;</button><br><br><h2 style="color:#000;">veya</h2><br><div class="col-lg-6"><div class="input-group"><input style="height:45px;" type="number" class="form-control" placeholder="PARDON KODUNU GİRİN"><span class="input-group-btn">
-        <button class="btn btn-primary btn-lg" type="button">GİT</button>
+                <p><br><button class="btn btn-primary btn-lg" id="scan"><span class="glyphicon glyphicon-camera"></span> &nbsp;&nbsp;QR KODUNU TARAYIN&nbsp;&nbsp;&nbsp;</button><br><br><h2 style="color:#000;">veya</h2><br><div class="col-lg-6"><div class="input-group"><input style="height:45px;" id="pardonkodu" type="text" pattern="[0-9]*" class="form-control" placeholder="PARDON KODUNU GİRİN"><span class="input-group-btn">
+        <button onclick="enterCode()" class="btn btn-primary btn-lg" type="button">GİT</button>
       </span>
     </div>
   </div>
@@ -62,6 +62,7 @@
             element.onmousedown = function () { return false; }        // For Mozilla Browser
         </script>
         <script>
+            var pardonkodu="";
             var signupEmail="";
             var signupPassword="";
             var signupPhone="";
@@ -204,6 +205,21 @@
             }
             function bitkicaylari(){
                 document.getElementById("main").innerHTML = "<button onclick=\"cay()\" class=\"btn btn-primary\"><span class=\"glyphicons glyphicons-left-arrow\"></span> GERİ</button><hr>"+menu9;
+            }
+            function enterCode(){
+                pardonkodu=document.getElementById("pardonkodu").value;
+                if(pardonkodu=="12312"){
+                    document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Philips h101 model Televizyon</h1><img src=\"img/televizyon.png\"><br><br>Özet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özet <br><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorumları Okuyun&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorum Yapın&nbsp;</button>";   
+                } 
+                if(pardonkodu=="11235"){
+                    document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Özet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özet <br><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorumları Okuyun&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorum Yapın&nbsp;</button>";   
+                } 
+                if(pardonkodu=="13521"){
+                    document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Nusret Steakhouse</h1><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Menüye Bakın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Garson Çağırın&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Hesap İsteyin&nbsp;</button>";   
+                }
+                if(pardonkodu=="11293"){
+                    dem();   
+                }
             }
         </script>
         <script type="text/javascript" src="cordova.js"></script><script type="text/javascript" src="barcodescanner.js"></script><script type="text/javascript" src="js/index.js"></script><script type="text/javascript">app.initialize();</script><script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script><script src="js/bootstrap.min.js"></script>
