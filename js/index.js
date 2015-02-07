@@ -63,7 +63,7 @@ var app = {
                 document.getElementById("main").innerHTML = "<a href=\"index.html\">yenile</a><br><h1>Ayakkabı</h1><img src=\"img/ayakkabi.jpg\"><br><br>Özet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özetÖzet özet özet.Özet özet özet <br><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorumları Okuyun&nbsp;</button><br><button type=\"button\" class=\"btn btn-primary\" aria-label=\"Left Align\">&nbsp; Yorum Yapın&nbsp;</button>";   
             } 
             if(result.text=="13521"){
-                    document.getElementById("main").innerHTML = "<iframe height=\"450\" src=\"https://0.s3.envato.com/files/119977692/index.html\"></iframe>"; 
+                    document.getElementById("main").innerHTML = "<iframe height=\"400\" src=\"https://0.s3.envato.com/files/119977692/index.html\"></iframe>"; 
             }
             if(result.text=="11293"){
                 dem();   
